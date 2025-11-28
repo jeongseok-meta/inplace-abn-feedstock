@@ -30,6 +30,7 @@ requirements:
     - {{ compiler("cuda") }}  # [cuda_compiler_version != "None"]
     - {{ stdlib("c") }}
     - cuda-toolkit            # [cuda_compiler_version != "None" and build_platform != target_platform]
+    - ninja
   host:
     # GPU requirements
     - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version != "None"]
@@ -39,6 +40,7 @@ requirements:
     - pytorch >=2.4.0
     - setuptools
     - setuptools-scm
+    - wheel
   run:
     - cuda-cudart  # [cuda_compiler_version != "None"]
     - python
